@@ -82,18 +82,25 @@ const numeroTotalDiasIngreso = pacientes.reduce(
 
 // mediaEdadMujeres
 
-const EdadMujeresMedia = pacientes
-  .filter((paciente) => paciente.paciente.sexo === "M")
-  .reduce((acumulador, paciente) => acumulador + paciente.paciente.edad, 0);
+const cantidadMujeres = pacientes.filter(
+  (paciente) => paciente.paciente.sexo === "M"
+);
 
-// Creación objeto
+const EdadMujeresMedia = cantidadMujeres.reduce(
+  (acumulador, paciente) => acumulador + paciente.paciente.edad,
+  0
+);
 
-const objetoFinal = {
-  nPacientes: cantidadPacientes,
-  nMayoresEdad: cantidadPacientesMayores,
-  nHombresDiabeticos: cantidadHombresDiabeticos,
-  totalDiasIngreso: numeroTotalDiasIngreso,
-  mediaEdadMujeres: EdadMujeresMedia / 3,
+// Función para crear el objeto
+const creadorObjetoFinal = (arrayPacientes) => {
+  const objetoFinal = {
+    nPacientes: cantidadPacientes,
+    nMayoresEdad: cantidadPacientesMayores,
+    nHombresDiabeticos: cantidadHombresDiabeticos,
+    totalDiasIngreso: numeroTotalDiasIngreso,
+    mediaEdadMujeres: EdadMujeresMedia / cantidadMujeres.length,
+  };
+  return objetoFinal;
 };
 
-console.log(objetoFinal);
+console.log(creadorObjetoFinal(pacientes));
