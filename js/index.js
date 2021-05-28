@@ -90,8 +90,8 @@ const EdadMujeresMedia = pacientes
 
 const objetoFinal = {
   nPacientes: cantidadPacientes,
-  nMayoresEdad: pacientesMayores,
-  nHombresDiabeticos: hombresDiabeticos,
+  nMayoresEdad: cantidadPacientesMayores,
+  nHombresDiabeticos: cantidadHombresDiabeticos,
   totalDiasIngreso: numeroTotalDiasIngreso,
   mediaEdadMujeres: EdadMujeresMedia,
 };
