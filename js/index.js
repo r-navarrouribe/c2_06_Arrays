@@ -93,7 +93,7 @@ const objetoFinal = {
   nMayoresEdad: cantidadPacientesMayores,
   nHombresDiabeticos: cantidadHombresDiabeticos,
   totalDiasIngreso: numeroTotalDiasIngreso,
-  mediaEdadMujeres: EdadMujeresMedia,
+  mediaEdadMujeres: EdadMujeresMedia / 3,
 };
 
 console.log(objetoFinal);
